@@ -30,7 +30,8 @@ export function Projects({ range }: ProjectsProps) {
                     title={post.metadata.title}
                     description={post.metadata.summary}
                     content={post.content}
-                    avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}/>
+                    avatars={post.metadata.team?.map((member) => ({ src: member.avatar })) || []}
+                />
             ))}
         </Flex>
     );

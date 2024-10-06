@@ -1,6 +1,6 @@
 "use client";
 
-import { AvatarGroup, Flex, Heading, RevealFx, SmartImage, SmartLink, Text } from "@/once-ui/components";
+import { AvatarGroup, Flex, Heading, RevealFx, SmartImage, SmartLink, Text, Scroller } from "@/once-ui/components";
 import { useEffect, useState } from "react";
 
 interface ProjectCardProps {
@@ -61,11 +61,11 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             fillWidth gap="m"
             direction="column">
             <Flex onClick={handleImageClick}>
-            <RevealFx
+                {/* <RevealFx
                     style={{width: '100%'}}
-                    delay={0.4}
+                    delay={0}
                     trigger={isTransitioning}
-                    speed="fast">
+                    speed="fast"> */}
                     <SmartImage
                         tabIndex={0}
                         radius="l"
@@ -78,7 +78,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 cursor: 'pointer',
                             }),
                         }}/>
-                </RevealFx>
+                {/* </RevealFx> */}
             </Flex>
             {images.length > 1 && (
                 <Flex
@@ -141,7 +141,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                                 href={href}>
                                     <Text
                                         variant="body-default-s">
-                                        Read case study
+                                        More information
                                     </Text>
                             </SmartLink>
                         )}

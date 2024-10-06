@@ -105,7 +105,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
                     <video
                         src={src}
                         autoPlay
-                        loop
+                        // loop
                         muted
                         playsInline
                         style={{
@@ -156,7 +156,7 @@ const SmartImage: React.FC<SmartImageProps> = ({
                             <video
                                 src={src}
                                 autoPlay
-                                loop
+                                // loop
                                 muted
                                 playsInline
                                 style={{ 

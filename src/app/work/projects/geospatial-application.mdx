@@ -1,8 +1,9 @@
 ---
-title: "Geospatial Computer Vision Application"
-publishedAt: "2024-04-08"
+title: "Drone-Based Safety Monitoring System in Singapore"
+publishedAt: "2024-10-08"
 summary: "In this project, I developed a full-stack geospatial web application, utilising Next.js, Tailwind CSS, TypeScript, and Leaflet.js for the frontend, and FastAPI, PostgreSQL, and ORM for the backend, coordinating with a team of six developers for technical guidance and liaising with stakeholders to ensure alignment with user requirements."
 images:
+  - "/images/projects/project-01/blockfinder-video.mp4"
   - "/images/projects/project-01/blockfinder-map-dark.png"
   - "/images/projects/project-01/blockfinder-dashboard-dark-concise.png"
   - "/images/projects/project-01/blockfinder-report-dark.png"
@@ -16,26 +17,26 @@ team:
 
 ## Overview
 
-In this project, I developed a flexible and scalable design system using Next.js for front-end development and Figma for design collaboration. The goal was to create a reusable component library that not only adheres to consistent design principles but is also easily extendable for future needs. The design system was aimed at improving the overall developer experience while maintaining visual consistency across multiple projects.
+[View Demo](/images/projects/project-01/blockfinder-report-detailed-dark.png)
 
-## Key Features
+Developed a drone-based system to monitor critical areas in Singapore, focusing on detecting obstructions in fire access routes and other essential zones. By integrating geospatial mapping, drone imagery, and computer vision, this solution automates safety inspections and enhances operational efficiency.
 
-- **Component Library**: Built a set of modular, reusable UI components using React and styled-components in Next.js, focusing on accessibility and responsiveness.
-- **Theming and Customization**: Integrated a theming system that allows easy switching and customization of color palettes, typography, and layout styles using CSS variables and Figma tokens.
-- **Figma Integration**: Collaborated closely with designers by setting up a shared design library in Figma. This library was synchronized with the codebase, ensuring design handoffs were seamless and that design tokens remained consistent across both platforms.
-- **Documentation and Usage Guidelines**: Developed comprehensive documentation with Storybook to showcase components, usage patterns, and best practices, ensuring the design system is easy to adopt by other teams.
 
 ## Technologies Used
 
-- **Next.js**: For fast, server-rendered React applications.
-- **Figma**: For creating and managing design assets and prototypes.
-- **Styled-Components**: For styling React components with a modular, themable approach.
-- **Storybook**: For building an interactive, documented component library.
+- **Frontend**: Next.js, TypeScript, TailwindCSS, Leaflet.js
+- **Backend**: FastAPI, PostgreSQL
 
-## Challenges and Learnings
+## Key Features
 
-One key challenge was balancing the need for flexibility with the desire to maintain design consistency. The solution involved creating well-defined design tokens and establishing clear guidelines for when and how components could be customized. Additionally, setting up effective collaboration workflows between designers and developers using Figma and Git was a learning experience that greatly improved the process.
+- **Map Interface**: Created an interactive interface allowing users to draw and edit polygons on a geospatial map.
+- **Computer Vision Analysis**: Implemented a pipeline for analyzing user-uploaded GeoTiff files to detect obstructions using a large vision model.
+- **Monitoring Dashboard**: Developed a dashboard for real-time monitoring of key sites using historical data.
+- **Automated Report Generation**: Collaborated with users to automate report generation based on collected data.
+
+## Challenges Faced
+
+Overcame challenges in geospatial data integration and real-time processing by optimizing data handling and model performance.
 
 ## Outcome
-
-The design system is now actively used across multiple projects, leading to faster development cycles, fewer design inconsistencies, and improved collaboration between design and development teams. It has become a foundation for scaling our products efficiently while ensuring a cohesive user experience.
+This project enhanced my skills in geospatial data integration, drone technology, and computer vision, showcasing my ability to develop scalable, tech-driven solutions with significant safety applications.

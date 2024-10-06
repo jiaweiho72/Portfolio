@@ -47,7 +47,7 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Software engineer and Data Enthusiast</>,
+    headline: <>Software Engineer</>,
     subline: <>
     Hi, I'm Jia Wei, a final-year student at the National University of Singapore <InlineCode> (NUS)</InlineCode>, majoring in
     Business Analytics with a specialization in Machine Learning. I have a strong interest in 
@@ -126,47 +126,105 @@ const about = {
         title: 'Education',
         institutions: [
             {
-                name: 'NUS',
-                description: <>School of Computing <br/> Major in Business Analytics with Specialisation in Machine Learning </>,
+                name: 'National University of Singapore, School of Computing',
+                descriptions: [
+                    <>Major in Business Analytics with Specialisation in Machine Learning </>,
+                    <>Engaged in a Semester Exchange at the University of Liverpool, working alongside a diverse international student
+community in academic and cultural activities </>
+                ],
             },
         ]
     },
     technical: {
         display: true, // set to false to hide this section
-        title: 'Technical skills',
+        title: 'Technical Skills',
         skills: [
             {
-                title: 'Figma',
-                description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-                images: [
-                    {
-                        src: '/images/projects/project-01/cover-02.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                    {
-                        src: '/images/projects/project-01/cover-03.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                ]
+                title: 'Development',
+                description: 
+                <>
+                    Java, Python, R, JavaScript, SQL, React, Vue.js, HTML, Next.js, TypeScript, Tailwind CSS
+                </>,
+                images: []
+            },
+
+            {
+                title: 'Tools',
+                description: 
+                <>
+                    Git, AWS, Docker, Kubernetes, Tableau, Firebase, Microsoft Suite (Word, PowerPoint, Excel)
+                </>,
+                images: []
+            },
+            // {
+            //     title: 'Next.js',
+            //     description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
+            //     images: [
+            //         {
+            //             src: '/images/projects/project-01/cover-04.jpg',
+            //             alt: 'Project image',
+            //             width: 16,
+            //             height: 9
+            //         },
+            //     ]
+            // }
+        ],
+        coursework: "Data Management and Visualisation, Data Structures and Algorithms, Econometrics, Optimisation Methods, Programming Methodology, Statistics, Business & Technical Communication, Application Systems Development, Data Mining, Cloud Computing, Complex Networks, LLM, Fraud Analytics, Financial Modelling"
+    },
+    coursework: {
+        display: true, // set to false to hide this section
+        title: 'Relevant Coursework',
+        description: 
+        <>
+            Data Management and Visualisation, Data Structures and Algorithms, Econometrics, Optimisation Methods, Programming Methodology, Statistics, Business & Technical Communication, Application Systems Development, Data Mining, Cloud Computing, Complex Networks, LLM, Fraud Analytics, Financial Modelling
+        </>
+    },
+    leadership: {
+        display: true, // set to false to hide this section
+        title: 'Leadership Experience',
+        experiences: [
+            {
+                company: 'NUS Electronic Music Lab',
+                timeframe: 'Apr 2022 - Apr 2023',
+                role: 'President',
+                achievements: [
+                    <>
+                        Led and managed a team of five in organising and executing major performances, outreach events, and key initiatives, elevating club visibility and engagement across campus
+                    </>,
+                    
+                ],
+                images: [ ]
             },
             {
-                title: 'Next.js',
-                description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-                images: [
-                    {
-                        src: '/images/projects/project-01/cover-04.jpg',
-                        alt: 'Project image',
-                        width: 16,
-                        height: 9
-                    },
-                ]
-            }
+                company: 'TeachSG/NUS',
+                timeframe: 'Aug 2022 - Apr 2023',
+                role: 'Volunteer Lead',
+                achievements: [
+                    <>
+                        Directed a group of three volunteers in organising weekly mentorship sessions for 30 less-privileged children
+                    </>,
+                    <>
+                        Liaised with school staff and external vendors to arrange more than 15 enrichment activities, such as workshops, arts and
+                        crafts, and cultural lessons
+                    </>
+                ],
+                images: [ ]
+            },
         ]
-    }
+    },
+    additional: {
+        display: true, // set to false to hide this section
+        title: 'Additional Information',
+        descriptions: [
+            <>
+                Represented Singapore in the Asian Freestyle Football Championships in 2018, placing in the top 32
+            </>,
+            <>
+                Enjoys playing football and was selected by school for a one-week training stint in Japan with J2
+                League Matsumoto Yamaga FC in Dec 2017
+            </>,
+        ]
+    },
 }
 
 const blog = {

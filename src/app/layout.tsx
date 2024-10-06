@@ -107,7 +107,7 @@ export default function RootLayout({ children } : RootLayoutProps) {
 						</RouteGuard>
 					</Flex>
 				</Flex>
-				<Footer/>
+				{/* <Footer/> */}
 			</Flex>
 		</Flex>
 	);

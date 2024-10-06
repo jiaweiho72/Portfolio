@@ -109,10 +109,10 @@ export default function Home() {
 					</Flex>
 				
 			</Flex>
-			<RevealFx translateY="16" delay={0.6}>
+			<RevealFx translateY="16" delay={0.6} speed="fast">
 				<Projects range={[1,1]}/>
 			</RevealFx>
-			{routes['/blog'] && (
+			{/* {routes['/blog'] && (
 				<Flex fillWidth paddingX="20">
 					<Posts range={[1,2]} columns="2"/>
 				</Flex>
@@ -120,7 +120,7 @@ export default function Home() {
 			<Projects range={[2]}/>
 			{ newsletter.display &&
 				<Mailchimp/>
-			}
+			} */}
 		</Flex>
 	);
 }

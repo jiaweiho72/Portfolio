@@ -61,9 +61,9 @@ export const Header = () => {
                 paddingLeft="12" fillWidth
                 alignItems="center"
                 textVariant="body-default-s">
-                { display.location && (
+                {/* { display.location && (
                     <>{person.location}</>
-                )}
+                )} */}
             </Flex>
             <Flex
                 background="surface" border="neutral-medium" borderStyle="solid-1" radius="m-4" shadow="l"

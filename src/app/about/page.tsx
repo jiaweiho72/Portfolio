@@ -110,6 +110,8 @@ export default function About() {
                     // flex={3} 
                     style={{
                         left: 150,
+                        // left: 130,
+
                         // transform: 'translateY(-50%)',
                         whiteSpace: 'nowrap',
                         // backgroundColor: 'black',
@@ -164,7 +166,7 @@ export default function About() {
                 mobileDirection="column" justifyContent="center" alignItems='center'
                 // paddingRight="xl"
                 // background="brand-medium"
-                paddingLeft='160'
+                paddingLeft='128'
             >
 
                 
@@ -172,11 +174,16 @@ export default function About() {
                 <Flex
                     className={styles.blockAlign}
                     fillWidth flex={12} 
-                    // maxWidth={40} 
                     maxWidth={55} 
+                    // maxWidth={60} 
+
 
                     direction="column" 
+                    // paddingLeft='160'
+
                     paddingLeft='128'
+                    // paddingLeft='104'
+
                     // paddingRight="xl"
                     // background="brand-medium"
                 >

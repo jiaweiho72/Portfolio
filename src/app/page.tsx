@@ -6,6 +6,8 @@ import { Projects } from '@/app/work/components/Projects';
 import { about, baseURL, home, newsletter, person, routes } from '@/app/resources'
 import { Mailchimp } from '@/app/components';
 import { Posts } from '@/app/blog/components/Posts';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 export function generateMetadata() {
 	const title = home.title;
@@ -70,15 +72,26 @@ export default function Home() {
 				
 					<Flex
 						direction="column"
-						fillWidth maxWidth="s" gap="m">
-						<RevealFx translateY="4">
+						fillWidth 
+						maxWidth="s" 
+						gap="m"
+					>
+						<RevealFx 
+							translateY="4"
+						>
 							<Heading
 								wrap="balance"
-								variant="display-strong-l">
+								variant="display-strong-l"
+								paddingY='s'
+							>
 								{home.headline}
+
 							</Heading>
 						</RevealFx>
-						<RevealFx translateY="8" delay={0.2}>
+						<RevealFx 
+							translateY="8" 
+							delay={0.1}
+						>
 							<Text
 								wrap="balance"
 								onBackground="neutral-weak"

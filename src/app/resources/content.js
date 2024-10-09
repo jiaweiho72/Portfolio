@@ -6,7 +6,7 @@ const person = {
     get name() {
         return `${this.firstName} ${this.lastName}`;
     },
-    role:      'Software Engineer | Focused on AI and Machine Learning',
+    role:      'Software Engineer | Focus on AI and Machine Learning',
     avatar:    '/images/avatar.jpg',
     location:  'Asia/Singapore',        // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
     languages: ['English', 'Chinese']  // optional: Leave the array empty if you don't want to display languages
@@ -47,7 +47,7 @@ const home = {
     label: 'Home',
     title: `${person.name}'s Portfolio`,
     description: `Portfolio website showcasing my work as a ${person.role}`,
-    headline: <>Software Engineer</>,
+    headline: <>Software Engineering &<br/> Machine Learning</>,
     subline: <>
     Hi, I'm Jia Wei, a final-year student at the National University of Singapore <InlineCode> (NUS)</InlineCode>, majoring in
     Business Analytics with a specialization in Machine Learning. I have a strong interest in 

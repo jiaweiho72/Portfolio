@@ -34,6 +34,11 @@ export function generateMetadata() {
 
 const structure = [
     { 
+        title: about.intro.title,
+        display: about.intro.display,
+        items: []
+    },
+    { 
         title: about.work.title,
         display: about.work.display,
         items: about.work.experiences.map(experience => experience.company)
@@ -48,28 +53,13 @@ const structure = [
         display: about.technical.display,
         items: about.technical.skills.map(skill => skill.title)
     },
-    { 
-        title: about.leadership.title,
-        display: about.leadership.display,
-        items: about.leadership.experiences.map(experience => experience.company)
-    },
-    { 
-        title: about.additional.title,
-        display: about.additional.display,
-        items: about.work.experiences.map(experience => experience.company)
-    },
 ]
 
 export default function About() {
     return (
         <Flex
-            fillWidth 
-            // maxWidth="m"
-            direction="column"
-            // alignItems="start"
-            // justifyContent="start"
-            // background="brand-medium"
-        >
+            fillWidth maxWidth="m"
+            direction="column">
             <script
                 type="application/ld+json"
                 suppressHydrationWarning
@@ -92,41 +82,24 @@ export default function About() {
                     }),
                 }}
             />
-
-            
-
+            { about.tableOfContent.display && (
+                <Flex
+                    style={{ left: '0', top: '50%', transform: 'translateY(-50%)' }}
+                    position="fixed"
+                    paddingLeft="24" gap="32"
+                    direction="column" hide="s">
+                    <TableOfContents
+                        structure={structure}
+                        about={about} />
+                </Flex>
+            )}
             <Flex
                 fillWidth
-                mobileDirection="column" justifyContent="end"
-                // paddingLeft='128'
-                // paddingX='xl'
-                paddingX="12"
-                // background="brand-medium"
-            >
-                {/* Avatar display */}
+                mobileDirection="column" justifyContent="center">
                 { about.avatar.display && (
                     <Flex
-                        minWidth="160"   
-                        gap="m"
-                        // flex={3} 
-                        // paddingX="l"
-                        paddingBottom="xl"
-                        // background="brand-medium"
-                        // paddingRight="128"
-                        style={{
-                            // left: 150,
-                            // left:100,
-                            left: '10%',
-
-                            // left: 130,
-                            // transform: 'translateY(-50%)',
-                            whiteSpace: 'nowrap',
-                        }}
-                        hide="m"
-                        position="fixed"
-                        direction="column" 
-                        alignItems="center"
-                    >
+                        minWidth="160" paddingX="l" paddingBottom="xl" gap="m"
+                        flex={3} direction="column" alignItems="center">
                         <Avatar
                             src={person.avatar}
                             size="xl"/>
@@ -151,52 +124,43 @@ export default function About() {
                                 ))}
                             </Flex>
                         )}
-
-                        { about.tableOfContent.display && (
-                            <Flex paddingTop='24'>
-                                <TableOfContents
-                                    structure={structure}
-                                    about={about} 
-                                />
-                            </Flex>
-                        )}
-
-
-                        
                     </Flex>
                 )}
-                
-                {/* Resume Content */}
                 <Flex
                     className={styles.blockAlign}
-                    fillWidth flex={9} 
-                    maxWidth={55} 
-                    // maxWidth={60} 
-
-
-                    direction="column" 
-                    // style={{
-                    //     // left: 150,
-                    //     // left:100,
-                    //     right: '100%',
-
-                    //     // left: 130,
-                    // }}
-                    // paddingLeft='160'
-
-                    // paddingLeft='128'
-                    // paddingLeft='104'
-
-                    // paddingRight="xl"
-                    // background="brand-medium"
-                >
+                    fillWidth flex={9} maxWidth={40} direction="column">
                     <Flex
                         id={about.intro.title}
                         fillWidth minHeight="160"
-                        direction="column" 
-                        justifyContent="center"
-                        marginBottom="32"
-                    >
+                        direction="column" justifyContent="center"
+                        marginBottom="32">
+                        {about.calendar.display && (
+                            <Flex
+                                className={styles.blockAlign}
+                                style={{
+                                    backdropFilter: 'blur(var(--static-space-1))',
+                                    border: '1px solid var(--brand-alpha-medium)',
+                                    width: 'fit-content'
+                                }}
+                                alpha="brand-weak" radius="full"
+                                fillWidth padding="4" gap="8" marginBottom="m"
+                                alignItems="center">
+                                <Flex paddingLeft="12">
+                                    <Icon
+                                        name="calendar"
+                                        onBackground="brand-weak"/>
+                                </Flex>
+                                <Flex
+                                    paddingX="8">
+                                    Schedule a call
+                                </Flex>
+                                <IconButton
+                                    href={about.calendar.link}
+                                    data-border="rounded"
+                                    variant="tertiary"
+                                    icon="chevronRight"/>
+                            </Flex>
+                        )}
                         <Heading
                             className={styles.textAlign}
                             variant="display-strong-xl">
@@ -329,32 +293,17 @@ export default function About() {
                                 {about.studies.institutions.map((institution, index) => (
                                     <Flex
                                         key={`${institution.name}-${index}`}
-                                        fillWidth gap="16"
+                                        fillWidth gap="4"
                                         direction="column">
                                         <Text
                                             id={institution.name}
                                             variant="heading-strong-l">
                                             {institution.name}
                                         </Text>
-                                        <Flex
-                                            as="ul"
-                                            direction="column" 
-                                            gap="16"
-                                        >
-                                            {institution.descriptions.map((description, index) => (
-                                                <Text
-                                                    as="li"
-                                                    variant="body-default-m"
-                                                    key={`${description}-${index}`}>
-                                                    {description}
-                                                </Text>
-                                            ))}
-                                        </Flex>
+
                                     </Flex>
                                 ))}
                             </Flex>
-
-
                         </>
                     )}
 
@@ -368,10 +317,7 @@ export default function About() {
                             </Heading>
                             <Flex
                                 direction="column"
-                                fillWidth gap="l"
-                                // marginBottom="m"
-                                marginBottom="40"
-                            >
+                                fillWidth gap="l">
                                 {about.technical.skills.map((skill, index) => (
                                     <Flex
                                         key={`${skill}-${index}`}
@@ -386,108 +332,29 @@ export default function About() {
                                             onBackground="neutral-weak">
                                             {skill.description}
                                         </Text>
+                                        {skill.images.length > 0 && (
+                                            <Flex
+                                                fillWidth paddingTop="m" gap="12"
+                                                wrap>
+                                                {skill.images.map((image, index) => (
+                                                    <Flex
+                                                        key={index}
+                                                        border="neutral-medium"
+                                                        borderStyle="solid-1"
+                                                        radius="m"
+                                                        minWidth={image.width} height={image.height}>
+                                                        <SmartImage
+                                                            enlarge
+                                                            radius="m"
+                                                            sizes={image.width.toString()}
+                                                            alt={image.alt}
+                                                            src={image.src}/>
+                                                    </Flex>
+                                                ))}
+                                            </Flex>
+                                        )}
                                     </Flex>
                                 ))}
-                            </Flex>
-                            <Flex
-                                fillWidth gap="4"
-                                direction="column"
-                                marginBottom='l'
-                            >
-                                <Text
-                                    variant="heading-strong-l">
-                                    Coursework
-                                </Text>
-                                <Text
-                                    variant="body-default-m"
-                                    onBackground="neutral-weak"
-                                >
-                                    {about.technical.coursework}
-                                </Text>
-                            </Flex>
-                        </>
-                    )}
-                    { about.leadership.display && (
-                        <>
-                            <Heading
-                                as="h2"
-                                id={about.leadership.title}
-                                variant="display-strong-s"
-                                marginBottom="m">
-                                {about.leadership.title}
-                            </Heading>
-                            <Flex
-                                direction="column"
-                                fillWidth gap="l" marginBottom="40">
-                                {about.leadership.experiences.map((experience, index) => (
-                                    <Flex
-                                        key={`${experience.company}-${experience.role}-${index}`}
-                                        fillWidth
-                                        direction="column">
-                                        <Flex
-                                            fillWidth
-                                            justifyContent="space-between"
-                                            alignItems="flex-end"
-                                            marginBottom="4">
-                                            <Text
-                                                id={experience.company}
-                                                variant="heading-strong-l">
-                                                {experience.company}
-                                            </Text>
-                                            <Text
-                                                variant="heading-default-xs"
-                                                onBackground="neutral-weak">
-                                                {experience.timeframe}
-                                            </Text>
-                                        </Flex>
-                                        <Text
-                                            variant="body-default-s"
-                                            onBackground="brand-weak"
-                                            marginBottom="m">
-                                            {experience.role}
-                                        </Text>
-                                        <Flex
-                                            as="ul"
-                                            direction="column" gap="16">
-                                            {experience.achievements.map((achievement, index) => (
-                                                <Text
-                                                    as="li"
-                                                    variant="body-default-m"
-                                                    key={`${experience.company}-${index}`}>
-                                                    {achievement}
-                                                </Text>
-                                            ))}
-                                        </Flex>
-                                    </Flex>
-                                ))}
-                            </Flex>
-                        </>
-                    )}
-
-                    { about.additional.display && (
-                        <>
-                            <Heading
-                                as="h2"
-                                id={about.additional.title}
-                                variant="display-strong-s"
-                                marginBottom="m">
-                                {about.additional.title}
-                            </Heading>
-                            <Flex
-                                direction="column"
-                                fillWidth gap="l" marginBottom="40">
-                                <Flex
-                                    as="ul"
-                                    direction="column" gap="16">
-                                    {about.additional.descriptions.map((description, index) => (
-                                        <Text
-                                            as="li"
-                                            variant="body-default-m"
-                                            key={`${description}-${index}`}>
-                                            {description}
-                                        </Text>
-                                    ))}
-                                </Flex>
                             </Flex>
                         </>
                     )}

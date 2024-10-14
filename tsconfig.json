@@ -35,7 +35,7 @@
 		"next-env.d.ts",
 		"**/*.ts",
 		"**/*.tsx",
-		".next/types/**/*.ts",
+		".next/types/**/*.ts", "src/app/about/page.2tsx",
 	],
 	"exclude": [
 		"node_modules"

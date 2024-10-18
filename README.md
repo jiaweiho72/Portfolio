@@ -2,6 +2,8 @@
 
 Magic Portfolio was built with [Once UI](https://once-ui.com) and [Next.js](https://nextjs.org). It requires Node.js v18.17+.
 
+**[DEMO](https://portfolio-ho-jia-wei.vercel.app/)**
+
 **1. Clone the repository**
 ```
 git clone https://github.com/jiaweiho72/Portfolio.git

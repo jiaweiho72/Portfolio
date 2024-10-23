@@ -97,32 +97,35 @@ export default function About() {
 
             <Flex
                 fillWidth
-                className={styles.alignment}
-                mobileDirection="column" 
-                // justifyContent="end"
-                justifyContent="center"
-
+                mobileDirection="column" justifyContent="end"
                 // paddingLeft='128'
                 // paddingX='xl'
                 paddingX="12"
-                // paddingTop='32'
-
                 // background="brand-medium"
             >
                 {/* Avatar display */}
                 { about.avatar.display && (
                     <Flex
-                    className={styles.small} // Apply the class to hide on small screens
-                    minWidth="160"
-                    gap="m"
-                    paddingBottom="xl"
-                    style={{
-                        left: '10%',
-                        whiteSpace: 'nowrap',
-                    }}
-                    position="fixed"
-                    direction="column"
-                    alignItems="center"
+                        minWidth="160"   
+                        gap="m"
+                        // flex={3} 
+                        // paddingX="l"
+                        paddingBottom="xl"
+                        // background="brand-medium"
+                        // paddingRight="128"
+                        style={{
+                            // left: 150,
+                            // left:100,
+                            left: '10%',
+
+                            // left: 130,
+                            // transform: 'translateY(-50%)',
+                            whiteSpace: 'nowrap',
+                        }}
+                        hide="m"
+                        position="fixed"
+                        direction="column" 
+                        alignItems="center"
                     >
                         <Avatar
                             src={person.avatar}

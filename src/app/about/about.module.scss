@@ -18,3 +18,26 @@
     }
 }
 
+
+@media (max-width: 1200px) {
+    .small {
+        display: none; /* Hides the component */
+    }
+}
+
+// .small {
+//     background-color: red; /* Make it red to see it easily */
+//     color: white; /* Change text color for contrast */
+//     padding: 20px; /* Add some padding */
+//     text-align: center; /* Center the text */
+// }
+
+
+.alignment {
+    padding-left: 375px; // High padding for larger screens
+    // padding-left: 30%;
+    // background-color: red;
+    @media (max-width: 1200px) {
+        padding-left: 0; // Zero padding for screens 1200px and smaller
+    }
+}

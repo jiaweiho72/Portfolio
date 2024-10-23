@@ -45,7 +45,9 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
             }}
             // position="fixed"
             paddingRight="24" gap="32"
-            direction="column" hide="s">
+            direction="column" 
+            // hide="s"
+            >
             {structure
                 .filter(section => section.display)
                 .map((section, sectionIndex) => (

@@ -65,6 +65,25 @@ export default function Home() {
 					}),
 				}}
 			/>
+			{/* <video
+					autoPlay
+					loop
+					muted
+					style={{
+						position: "fixed",
+						top: "50%",
+						left: "50%",
+						width: "100vw",  // Set width to 100% of the viewport width
+						height: "100vh", // Set height to 100% of the viewport height
+						transform: "translate(-50%, -50%)", // Center the video
+						zIndex: -1,
+						objectFit: "cover",  // Cover the screen completely
+					}}
+					playsInline
+				>
+					<source src="/bg-video.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video> */}
 			<Flex
 				fillWidth
 				direction="column"

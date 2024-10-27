@@ -1,0 +1,23 @@
+/* Global CSS or CSS module */
+.small {
+    background-color: red; /* Make it red to see it easily */
+    color: white; /* Change text color for contrast */
+    padding: 20px; /* Add some padding */
+    text-align: center; /* Center the text */
+}
+
+@media (max-width: 1200px) {
+    .small {
+        display: none; /* Hides the component on smaller screens */
+    }
+}
+
+.alignment {
+    padding-left: 375px; /* High padding for larger screens */
+}
+
+@media (max-width: 1200px) {
+    .alignment {
+        padding-left: 0; /* Zero padding for screens 1200px and smaller */
+    }
+}

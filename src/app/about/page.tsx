@@ -1,7 +1,8 @@
-import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text } from '@/once-ui/components';
+import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text, Background } from '@/once-ui/components';
 import { person, about, social, baseURL } from '@/app/resources'
 import TableOfContents from '@/app/about/components/TableOfContents';
 import styles from '@/app/about/about.module.scss'
+import stylescss from './styles.module.css';
 
 export function generateMetadata() {
 	const title = about.title;
@@ -62,6 +63,7 @@ const structure = [
 
 export default function About() {
     return (
+        
         <Flex
             fillWidth 
             // maxWidth="m"
@@ -92,7 +94,67 @@ export default function About() {
                     }),
                 }}
             />
+            {/* <Background
+                gradient={true}
+                dots={true}
+                lines={false}
+            /> */}
+            
 
+            {/* Avatar display */}
+            { about.avatar.display && (
+                <Flex
+                className={styles.small} // Apply the class to hide on small screens
+                // minWidth="160"
+                // gap="m"
+                // paddingBottom="xl"
+                // style={{
+                //     left: '10%',
+                //     whiteSpace: 'nowrap',
+                // }}
+                // position="fixed"
+                // direction="column"
+                // alignItems="center"
+                // justifyContent='center'
+                >
+                    <Avatar
+                        src={person.avatar}
+                        size="xl"/>
+                    <Flex
+                        gap="8"
+                        alignItems="center">
+                        <Icon
+                            onBackground="accent-weak"
+                            name="globe"/>
+                        {person.location}
+                    </Flex>
+                    { person.languages.length > 0 && (
+                        <Flex
+                            wrap
+                            gap="8">
+                            {person.languages.map((language, index) => (
+                                <Tag
+                                    key={index}
+                                    size="l">
+                                    {language}
+                                </Tag>
+                            ))}
+                        </Flex>
+                    )}
+
+                    { about.tableOfContent.display && (
+                        <Flex paddingTop='24'>
+                            <TableOfContents
+                                structure={structure}
+                                about={about} 
+                            />
+                        </Flex>
+                    )}
+
+
+                    
+                </Flex>
+            )}
             
 
             <Flex
@@ -104,69 +166,17 @@ export default function About() {
 
                 // paddingLeft='128'
                 // paddingX='xl'
-                paddingX="12"
+                // paddingX="12"
                 // paddingTop='32'
 
                 // background="brand-medium"
             >
-                {/* Avatar display */}
-                { about.avatar.display && (
-                    <Flex
-                    className={styles.small} // Apply the class to hide on small screens
-                    minWidth="160"
-                    gap="m"
-                    paddingBottom="xl"
-                    style={{
-                        left: '10%',
-                        whiteSpace: 'nowrap',
-                    }}
-                    position="fixed"
-                    direction="column"
-                    alignItems="center"
-                    >
-                        <Avatar
-                            src={person.avatar}
-                            size="xl"/>
-                        <Flex
-                            gap="8"
-                            alignItems="center">
-                            <Icon
-                                onBackground="accent-weak"
-                                name="globe"/>
-                            {person.location}
-                        </Flex>
-                        { person.languages.length > 0 && (
-                            <Flex
-                                wrap
-                                gap="8">
-                                {person.languages.map((language, index) => (
-                                    <Tag
-                                        key={index}
-                                        size="l">
-                                        {language}
-                                    </Tag>
-                                ))}
-                            </Flex>
-                        )}
-
-                        { about.tableOfContent.display && (
-                            <Flex paddingTop='24'>
-                                <TableOfContents
-                                    structure={structure}
-                                    about={about} 
-                                />
-                            </Flex>
-                        )}
-
-
-                        
-                    </Flex>
-                )}
                 
                 {/* Resume Content */}
                 <Flex
                     className={styles.blockAlign}
-                    fillWidth flex={9} 
+                    fillWidth 
+                    flex={9} 
                     maxWidth={55} 
                     // maxWidth={60} 
 
@@ -184,7 +194,9 @@ export default function About() {
                     // paddingLeft='128'
                     // paddingLeft='104'
 
-                    // paddingRight="xl"
+                    // padding='l'
+                    // data-border="rounded"
+                    // radius="m"
                     // background="brand-medium"
                 >
                     <Flex

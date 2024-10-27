@@ -18,26 +18,43 @@
     }
 }
 
+// @media (max-width: 600px) { // Use a sensible breakpoint, e.g., 600px
+//     .small {
+//         display: none; /* Hides the component */
+//         background-color: red; /* Optional: Just to visualize if needed */
+//     }
+// }
 
-@media (max-width: 1200px) {
-    .small {
-        display: none; /* Hides the component */
+.small {
+    // background-color: red; /* Make it red to see it easily */
+    // color: white; /* Change text color for contrast */
+    // padding: 20px; /* Add some padding */
+    // text-align: center; /* Center the text */
+    display: flex; /* Assuming it's a flex container since you use 'direction' and 'alignItems' */
+    flex-direction: column; /* Equivalent to direction="column" */
+    align-items: center; /* Equivalent to alignItems="center" */
+    min-width: 160px; /* Set minimum width */
+    padding-bottom: var(--spacing-xl); /* Use a CSS variable for padding, adjust accordingly */
+    position: fixed; /* Fixed position */
+    // left: 10%; /* Position from the left */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-270%); /* Shift left to center */
+    white-space: nowrap; /* Prevent text from wrapping */
+    gap: 24px;
+    @media (max-width: 1200px) {
+        display: none;
+        // padding-left: 500px; // Zero padding for screens 1200px and smaller
     }
 }
 
-// .small {
-//     background-color: red; /* Make it red to see it easily */
-//     color: white; /* Change text color for contrast */
-//     padding: 20px; /* Add some padding */
-//     text-align: center; /* Center the text */
-// }
-
 
 .alignment {
-    padding-left: 375px; // High padding for larger screens
-    // padding-left: 30%;
-    // background-color: red;
+    padding-left: 345px; // High padding for larger screens
+    // left: 50%; /* Center horizontally */
+    // transform: translateX(+10%);
+
     @media (max-width: 1200px) {
         padding-left: 0; // Zero padding for screens 1200px and smaller
+        // transform: translateX(0);
     }
 }

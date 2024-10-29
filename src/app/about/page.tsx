@@ -35,6 +35,11 @@ export function generateMetadata() {
 
 const structure = [
     { 
+        title: about.intro.title,
+        display: about.intro.display,
+        items: []
+    },
+    { 
         title: about.work.title,
         display: about.work.display,
         items: about.work.experiences.map(experience => experience.company)
@@ -54,11 +59,11 @@ const structure = [
         display: about.leadership.display,
         items: about.leadership.experiences.map(experience => experience.company)
     },
-    { 
-        title: about.additional.title,
-        display: about.additional.display,
-        items: about.work.experiences.map(experience => experience.company)
-    },
+    // { 
+    //     title: about.additional.title,
+    //     display: about.additional.display,
+    //     items: about.work.experiences.map(experience => experience.company)
+    // },
 ]
 
 export default function About() {
@@ -94,28 +99,35 @@ export default function About() {
                     }),
                 }}
             />
-            {/* <Background
+
+            <Background
                 gradient={true}
                 dots={true}
                 lines={false}
-            /> */}
+                style={{
+                    zIndex: -1
+                }}
+            />
             
+            {/* <img
+                src="/bg-image.jpg" // Replace with the path to your image
+                alt="Background"
+                style={{
+                    position: "fixed",
+                    top: "50%",
+                    left: "50%",
+                    width: "100vw",       // Set width to 100% of the viewport width
+                    height: "100vh",      // Set height to 100% of the viewport height
+                    transform: "translate(-50%, -50%)", // Center the image
+                    zIndex: -1,
+                    objectFit: "cover",  // Ensures the image covers the screen completely
+                }}
+            /> */}
 
             {/* Avatar display */}
             { about.avatar.display && (
                 <Flex
-                className={styles.small} // Apply the class to hide on small screens
-                // minWidth="160"
-                // gap="m"
-                // paddingBottom="xl"
-                // style={{
-                //     left: '10%',
-                //     whiteSpace: 'nowrap',
-                // }}
-                // position="fixed"
-                // direction="column"
-                // alignItems="center"
-                // justifyContent='center'
+                    className={styles.small} // Apply the class to hide on small screens
                 >
                     <Avatar
                         src={person.avatar}
@@ -150,9 +162,6 @@ export default function About() {
                             />
                         </Flex>
                     )}
-
-
-                    
                 </Flex>
             )}
             
@@ -163,13 +172,6 @@ export default function About() {
                 mobileDirection="column" 
                 // justifyContent="end"
                 justifyContent="center"
-
-                // paddingLeft='128'
-                // paddingX='xl'
-                // paddingX="12"
-                // paddingTop='32'
-
-                // background="brand-medium"
             >
                 
                 {/* Resume Content */}
@@ -178,26 +180,7 @@ export default function About() {
                     fillWidth 
                     flex={9} 
                     maxWidth={55} 
-                    // maxWidth={60} 
-
-
                     direction="column" 
-                    // style={{
-                    //     // left: 150,
-                    //     // left:100,
-                    //     right: '100%',
-
-                    //     // left: 130,
-                    // }}
-                    // paddingLeft='160'
-
-                    // paddingLeft='128'
-                    // paddingLeft='104'
-
-                    // padding='l'
-                    // data-border="rounded"
-                    // radius="m"
-                    // background="brand-medium"
                 >
                     <Flex
                         id={about.intro.title}

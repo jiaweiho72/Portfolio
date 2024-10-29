@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation'
 import { CustomMDX } from '@/app/components/mdx'
 import { formatDate, getPosts } from '@/app/utils'
-import { AvatarGroup, Button, Flex, Heading, SmartImage, Text } from '@/once-ui/components'
+import { AvatarGroup, Button, Flex, Heading, SmartImage, Text, Background } from '@/once-ui/components'
 import { baseURL, person } from '@/app/resources';
 
 interface WorkParams {
@@ -101,6 +101,47 @@ export default function Project({ params }: WorkParams) {
 					}),
 				}}
 			/>
+			{/* <video
+				autoPlay
+				loop
+				muted
+				style={{
+					position: "fixed",
+					top: "50%",
+					left: "50%",
+					width: "100vw",  // Set width to 100% of the viewport width
+					height: "100vh", // Set height to 100% of the viewport height
+					transform: "translate(-50%, -50%)", // Center the video
+					zIndex: -1,
+					objectFit: "cover",  // Cover the screen completely
+				}}
+				playsInline
+			>
+				<source src="/bg-video.mp4" type="video/mp4" />
+				Your browser does not support the video tag.
+			</video> */}
+			{/* <img
+				src="/bg-image.jpg" // Replace with the path to your image
+				alt="Background"
+				style={{
+					position: "fixed",
+					top: "50%",
+					left: "50%",
+					width: "100vw",       // Set width to 100% of the viewport width
+					height: "100vh",      // Set height to 100% of the viewport height
+					transform: "translate(-50%, -50%)", // Center the image
+					zIndex: -1,
+					objectFit: "cover",  // Ensures the image covers the screen completely
+				}}
+			/> */}
+			<Background
+                gradient={true}
+                dots={true}
+                lines={false}
+                style={{
+                    zIndex: -1
+                }}
+            />
 			<Flex
 				fillWidth maxWidth="xs" gap="16"
 				direction="column">

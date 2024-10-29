@@ -88,10 +88,10 @@ export default function RootLayout({ children } : RootLayoutProps) {
 				as="body"
 				fillWidth margin="0" padding="0"
 				direction="column">
-				<Background
+				{/* <Background
 					gradient={effects.gradient}
 					dots={effects.dots}
-					lines={effects.lines}/>
+					lines={effects.lines}/> */}
 				{/* <video
 					autoPlay
 					loop

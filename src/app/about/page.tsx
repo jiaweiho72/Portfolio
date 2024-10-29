@@ -1,7 +1,8 @@
-import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text } from '@/once-ui/components';
+import { Avatar, Button, Flex, Heading, Icon, IconButton, SmartImage, Tag, Text, Background } from '@/once-ui/components';
 import { person, about, social, baseURL } from '@/app/resources'
 import TableOfContents from '@/app/about/components/TableOfContents';
 import styles from '@/app/about/about.module.scss'
+import stylescss from './styles.module.css';
 
 export function generateMetadata() {
 	const title = about.title;
@@ -34,6 +35,11 @@ export function generateMetadata() {
 
 const structure = [
     { 
+        title: about.intro.title,
+        display: about.intro.display,
+        items: []
+    },
+    { 
         title: about.work.title,
         display: about.work.display,
         items: about.work.experiences.map(experience => experience.company)
@@ -53,15 +59,16 @@ const structure = [
         display: about.leadership.display,
         items: about.leadership.experiences.map(experience => experience.company)
     },
-    { 
-        title: about.additional.title,
-        display: about.additional.display,
-        items: about.work.experiences.map(experience => experience.company)
-    },
+    // { 
+    //     title: about.additional.title,
+    //     display: about.additional.display,
+    //     items: about.work.experiences.map(experience => experience.company)
+    // },
 ]
 
 export default function About() {
     return (
+        
         <Flex
             fillWidth 
             // maxWidth="m"
@@ -93,102 +100,87 @@ export default function About() {
                 }}
             />
 
+            <Background
+                gradient={true}
+                dots={true}
+                lines={false}
+                style={{
+                    zIndex: -1
+                }}
+            />
+            
+            {/* <img
+                src="/bg-image.jpg" // Replace with the path to your image
+                alt="Background"
+                style={{
+                    position: "fixed",
+                    top: "50%",
+                    left: "50%",
+                    width: "100vw",       // Set width to 100% of the viewport width
+                    height: "100vh",      // Set height to 100% of the viewport height
+                    transform: "translate(-50%, -50%)", // Center the image
+                    zIndex: -1,
+                    objectFit: "cover",  // Ensures the image covers the screen completely
+                }}
+            /> */}
+
+            {/* Avatar display */}
+            { about.avatar.display && (
+                <Flex
+                    className={styles.small} // Apply the class to hide on small screens
+                >
+                    <Avatar
+                        src={person.avatar}
+                        size="xl"/>
+                    <Flex
+                        gap="8"
+                        alignItems="center">
+                        <Icon
+                            onBackground="accent-weak"
+                            name="globe"/>
+                        {person.location}
+                    </Flex>
+                    { person.languages.length > 0 && (
+                        <Flex
+                            wrap
+                            gap="8">
+                            {person.languages.map((language, index) => (
+                                <Tag
+                                    key={index}
+                                    size="l">
+                                    {language}
+                                </Tag>
+                            ))}
+                        </Flex>
+                    )}
+
+                    { about.tableOfContent.display && (
+                        <Flex paddingTop='24'>
+                            <TableOfContents
+                                structure={structure}
+                                about={about} 
+                            />
+                        </Flex>
+                    )}
+                </Flex>
+            )}
             
 
             <Flex
                 fillWidth
-                mobileDirection="column" justifyContent="end"
-                // paddingLeft='128'
-                // paddingX='xl'
-                paddingX="12"
-                // background="brand-medium"
+                className={styles.alignment}
+                mobileDirection="column" 
+                // justifyContent="end"
+                justifyContent="center"
             >
-                {/* Avatar display */}
-                { about.avatar.display && (
-                    <Flex
-                        minWidth="160"   
-                        gap="m"
-                        // flex={3} 
-                        // paddingX="l"
-                        paddingBottom="xl"
-                        // background="brand-medium"
-                        // paddingRight="128"
-                        style={{
-                            // left: 150,
-                            // left:100,
-                            left: '10%',
-
-                            // left: 130,
-                            // transform: 'translateY(-50%)',
-                            whiteSpace: 'nowrap',
-                        }}
-                        hide="m"
-                        position="fixed"
-                        direction="column" 
-                        alignItems="center"
-                    >
-                        <Avatar
-                            src={person.avatar}
-                            size="xl"/>
-                        <Flex
-                            gap="8"
-                            alignItems="center">
-                            <Icon
-                                onBackground="accent-weak"
-                                name="globe"/>
-                            {person.location}
-                        </Flex>
-                        { person.languages.length > 0 && (
-                            <Flex
-                                wrap
-                                gap="8">
-                                {person.languages.map((language, index) => (
-                                    <Tag
-                                        key={index}
-                                        size="l">
-                                        {language}
-                                    </Tag>
-                                ))}
-                            </Flex>
-                        )}
-
-                        { about.tableOfContent.display && (
-                            <Flex paddingTop='24'>
-                                <TableOfContents
-                                    structure={structure}
-                                    about={about} 
-                                />
-                            </Flex>
-                        )}
-
-
-                        
-                    </Flex>
-                )}
                 
                 {/* Resume Content */}
                 <Flex
                     className={styles.blockAlign}
-                    fillWidth flex={9} 
+                    fillWidth 
+                    flex={9} 
                     maxWidth={55} 
-                    // maxWidth={60} 
-
-
                     direction="column" 
-                    // style={{
-                    //     // left: 150,
-                    //     // left:100,
-                    //     right: '100%',
-
-                    //     // left: 130,
-                    // }}
-                    // paddingLeft='160'
-
-                    // paddingLeft='128'
-                    // paddingLeft='104'
-
-                    // paddingRight="xl"
-                    // background="brand-medium"
                 >
                     <Flex
                         id={about.intro.title}

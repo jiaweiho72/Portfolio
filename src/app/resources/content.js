@@ -220,8 +220,8 @@ community in academic and cultural activities </>
                 Represented Singapore in the Asian Freestyle Football Championships in 2018, placing in the top 32
             </>,
             <>
-                Enjoys playing football and was selected by school for a one-week training stint in Japan with J2
-                League Matsumoto Yamaga FC in Dec 2017
+                Enjoys playing football and was selected as the only representative from school for a one-week
+                training stint in Japan with J2 League Matsumoto Yamaga FC in Dec 2017
             </>,
         ]
     },

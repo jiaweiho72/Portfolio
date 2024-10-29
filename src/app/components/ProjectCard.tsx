@@ -1,6 +1,6 @@
 "use client";
 
-import { AvatarGroup, Flex, Heading, RevealFx, SmartImage, SmartLink, Text, Scroller } from "@/once-ui/components";
+import { AvatarGroup, Flex, Heading, RevealFx, SmartImage, SmartLink, Text } from "@/once-ui/components";
 import { useEffect, useState } from "react";
 
 interface ProjectCardProps {
@@ -34,24 +34,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
     const handleImageClick = () => {
         if(images.length > 1) {
             setIsTransitioning(false);
-            setTimeout(() => {
-                const nextIndex = (activeIndex + 1) % images.length;
-                setActiveIndex(nextIndex);
-                setTimeout(() => {
-                    setIsTransitioning(true);
-                }, 630);
-            }, 630);
+            const nextIndex = (activeIndex + 1) % images.length;
+            handleControlClick(nextIndex);
+
         }
     };
-    
+
     const handleControlClick = (index: number) => {
         if (index !== activeIndex) {
-            setIsTransitioning(true);
+            setIsTransitioning(false);
             setTimeout(() => {
                 setActiveIndex(index);
-                setTimeout(() => {
-                    setIsTransitioning(false);
-                }, 630);
+                setIsTransitioning(true);
             }, 630);
         }
     };
@@ -61,7 +55,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             fillWidth gap="m"
             direction="column">
             <Flex onClick={handleImageClick}>
-                <RevealFx
+            <RevealFx
                     style={{width: '100%'}}
                     delay={0}
                     trigger={isTransitioning}
@@ -73,7 +67,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                         aspectRatio="16 / 9"
                         src={images[activeIndex]}
                         style={{
-                            border: '1px solid var(--neutral-alpha-weak)',
+                            // border: '1px solid var(--neutral-alpha-weak)',
                             ...(images.length > 1 && {
                                 cursor: 'pointer',
                             }),

@@ -41,7 +41,14 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
                 top: '50%',
                 // transform: 'translateY(-50%)',
                 whiteSpace: 'nowrap',
-                // backgroundColor: 'black',
+
+
+                maxHeight: 'calc(100vh - 450px)', // Use quotes around 100vh
+                overflowY: 'auto',
+
+
+                // paddingBottom: '160px',
+                // backgroundColor: 'red',
             }}
             // position="fixed"
             paddingRight="24" gap="32"
@@ -52,10 +59,11 @@ const TableOfContents: React.FC<TableOfContentsProps> = ({ structure, about }) =
                 <Flex key={sectionIndex} gap="12" direction="column">
                     <Flex
                         style={{ cursor: 'pointer' }}
+                        // background='brand-medium'
                         className={styles.hover}
                         gap="8"
                         alignItems="center"
-                        onClick={() => scrollTo(section.title, 80)}>
+                        onClick={() => scrollTo(section.title, 100)}>
                         <Flex
                             height="1" width="16"
                             background="neutral-strong">

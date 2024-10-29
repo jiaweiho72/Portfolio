@@ -88,10 +88,29 @@ export default function RootLayout({ children } : RootLayoutProps) {
 				as="body"
 				fillWidth margin="0" padding="0"
 				direction="column">
-				<Background
+				{/* <Background
 					gradient={effects.gradient}
 					dots={effects.dots}
-					lines={effects.lines}/>
+					lines={effects.lines}/> */}
+				{/* <video
+					autoPlay
+					loop
+					muted
+					style={{
+						position: "fixed",
+						top: "50%",
+						left: "50%",
+						width: "100vw",  // Set width to 100% of the viewport width
+						height: "100vh", // Set height to 100% of the viewport height
+						transform: "translate(-50%, -50%)", // Center the video
+						zIndex: -1,
+						objectFit: "cover",  // Cover the screen completely
+					}}
+					playsInline
+				>
+					<source src="/bg-video.mp4" type="video/mp4" />
+					Your browser does not support the video tag.
+				</video> */}
 				<Flex
 					fillWidth
 					minHeight="16">

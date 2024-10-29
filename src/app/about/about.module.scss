@@ -1,6 +1,6 @@
 .hover {
-    transition: var(--transition-property) var(--transition-duration-micro-medium) var(--transition-timing-function);
 
+    transition: var(--transition-property) var(--transition-duration-micro-medium) var(--transition-timing-function);
     &:hover {
         transform: translateX(var(--static-space-4));
     }
@@ -18,3 +18,49 @@
     }
 }
 
+.small {
+    display: flex; /* Assuming it's a flex container since you use 'direction' and 'alignItems' */
+    flex-direction: column; /* Equivalent to direction="column" */
+    align-items: center; /* Equivalent to alignItems="center" */
+    min-width: 160px; /* Set minimum width */
+    padding-bottom: 160px; /* Use a CSS variable for padding, adjust accordingly */
+    position: fixed; /* Fixed position */
+
+    left: 50%; /* Center horizontally */
+    transform: translateX(-250%); /* Shift left to center */
+    
+    white-space: nowrap; /* Prevent text from wrapping */
+    gap: 24px;
+
+    // max-height: 100vh; /* Maximum height limited to viewport height */
+    // overflow-y: auto; /* Enable vertical scrolling if content overflows */
+
+    z-index: 1000;
+    // pointer-events: none; /* Disable pointer events on the container */
+
+    // /* Re-enable pointer events on child elements */
+    // & > * {
+    //     pointer-events: auto;
+    // }
+    
+    @media (max-width: 1200px) {
+        display: none !important;
+        // padding-left: 500px; // Zero padding for screens 1200px and smaller
+    }
+}
+
+
+.alignment {
+    flex: 1;
+    // padding-left: 345px; // High padding for larger screens
+    left: 50%; /* Center horizontally */
+    transform: translateX(180px);
+    // background-color: red;
+    transition: margin-left 0.3s ease;
+
+    @media (max-width: 1200px) {
+        padding-left: 0; // Zero padding for screens 1200px and smaller
+        transform: translateX(0);
+        // background-color: red;
+    }
+}

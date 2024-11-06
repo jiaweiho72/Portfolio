@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Flex, Text, Button,  Avatar, RevealFx } from '@/once-ui/components';
+import { Heading, Flex, Text, Button,  Avatar, RevealFx, Background } from '@/once-ui/components';
 import { Projects } from '@/app/work/components/Projects';
 
 import { about, baseURL, home, newsletter, person, routes } from '@/app/resources'
@@ -65,7 +65,7 @@ export default function Home() {
 					}),
 				}}
 			/>
-			<video
+			{/* <video
 				autoPlay
 				loop
 				muted
@@ -83,7 +83,7 @@ export default function Home() {
 			>
 				<source src="/bg-video.mp4" type="video/mp4" />
 				Your browser does not support the video tag.
-			</video>
+			</video> */}
 			{/* <img
 				src="/bg-image.jpg" // Replace with the path to your image
 				alt="Background"
@@ -98,14 +98,14 @@ export default function Home() {
 					objectFit: "cover",  // Ensures the image covers the screen completely
 				}}
 			/> */}
-			{/* <Background
+			<Background
                 gradient={true}
                 dots={true}
                 lines={false}
                 style={{
                     zIndex: -1
                 }}
-            /> */}
+            />
 			<Flex
 				fillWidth
 				direction="column"

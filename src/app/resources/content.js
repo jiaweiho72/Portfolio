@@ -82,6 +82,39 @@ const about = {
         title: 'Work Experience',
         experiences: [
             {
+                company: 'ByteDance',
+                timeframe: 'Oct 2025 - Present',
+                role: 'Backend Engineer',
+                achievements: [
+                    <>Engineering large-scale distributed SQL systems on ByteDance’s internal cloud, ensuring high availability, fault tolerance, and scalability across compute, storage, and database platforms, including indexing, replication, and storage engines</>,
+                    <>Developing Golang-based reliability platforms and infrastructure-as-code systems for service orchestration, intelligent monitoring and governance to automate and optimize large-scale infrastructure management</>,
+                    <>Taking ownership of key infrastructure components, performing debugging and optimizations to ensure system reliability</>
+                ],
+                images: [ ]
+            },
+            {
+                company: 'Binance',
+                timeframe: 'Apr 2025 - Sep 2025',
+                role: 'Backend Engineer',
+                achievements: [
+                    <>Developed core backend components for Binance’s large-scale, company-wide monitoring and observability platform using Spring Boot and Prometheus, supporting 1000+ microservices with real-time alerting and anomaly detection</>,
+                    <>Built an AI/ML-powered root cause analysis module in Java to identify the most likely logs, correlated alerts, and anomalous metrics for incidents, reducing Mean Time to Resolution (MTTR) by ~25% and enhancing SRE incident response workflows</>,
+                    <>Engineered real-time big data streaming pipelines (Kafka, Flink, MySQL) processing 100K+ events/sec with custom transformations, optimizing throughput by 20%</>
+                ],
+                images: [ ]
+            },
+            {
+                company: 'Accenture',
+                timeframe: 'Jan 2025 - Apr 2025',
+                role: 'Cloud Engineer',
+                achievements: [
+                    <>Developed CI/CD pipelines using Azure DevOps to support cloud migration of MongoDB and application infrastructure</>,
+                    <>Built an AWS prototype disaster recovery solution with Terraform and Kubernetes, aiming to reduce recovery time from hours to seconds in a microservices-based system</>,
+                    <>Customized Terraform modules to provision AWS services like EKS, S3, IAM, VPC, load balancers, and CDNs</>
+                ],
+                images: [ ]
+            },
+            {
                 company: 'HTX',
                 timeframe: 'Jun 2024 - Present',
                 role: 'AI Software Engineer',
